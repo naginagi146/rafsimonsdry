@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig'
+
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +145,11 @@ LOGIN_REDIRECT_URL = '/'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+CLOUDINARY_STORAGE = {
+'CLOUD_NAME': 'djmeeqs4f',
+'API_KEY': '683697195713652',
+'API_SECRET': 'C1gf4Xgdt9m3y5JZP-srpHL9yLk'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
